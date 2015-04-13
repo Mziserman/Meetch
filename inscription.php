@@ -77,6 +77,7 @@
 		<input type="text" name="city" id="city">
 		<label for="city">Ville</label>
 		</p>
+
 	    <p>
 	    	<label>Vous recherchez :<br/>
 				<input type="checkbox" name="sman" id="sman">
