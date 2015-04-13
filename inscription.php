@@ -27,19 +27,19 @@
 		$prepare->bindValue(':mail',$_POST['mail']);
 		$prepare->bindValue(':password',hash('sha256',SALT.$_POST['password'])); // hash le mdp
 
-		if(!empty($_POST['sex'])){
+		if(isset($_POST['sex'])){
 			$sex = htmlentities($_POST['sex']);
-			$sql = $pdo->prepare('SELECT sex FROM user ');
+			$sql = $pdo->prepare('SELECT sex FROM user WHERE sex = \''.$sex.'\';');
 			$sql->execute(array('.$sex.' => $_POST['sex']));
 		}
 
-		if(!empty($_POST['name'])){
+		if(isset($_POST['name'])){
 			$sex = htmlentities($_POST['name']);
 			$sql = $pdo->prepare('SELECT name FROM user WHERE name = \''.$name.'\';');
 			$sql->execute(array('.$name.' => $_POST['name']));
 		}
 
-
+		$prepare->execute();
 
 	}
 
@@ -68,6 +68,7 @@
 		<br/>
 		<input type="text" name="first_name" id="first_name">
 		<label for="first_name" id="first_name">Prénom</label>
+		<br/>
 		 <p>
 		    <input type="date" name="birth_date">
 	   		<label for="birth_date">Date de naissance</label>
@@ -80,14 +81,16 @@
 	    	<label>Vous recherchez :<br/>
 				<input type="checkbox" name="sman" id="sman">
 				<label for="smen">Un homme</label>
+				<input type="checkbox" name="smale" id="smale">
+				<label for="smale">Un homme</label>
 				<input type="checkbox" name="sfemale" id="sfemale">
 				<label for="sfemale">Une femme</label>
 			</label>
 		</p>
 	    <p>
-   	   		<label>Que recherchez-vous ? <br/>
-				<input type="checkbox" name="sasoeur" id="sasoeur">
-				<label for="sasoeur">Ame soeur</label>
+   	   		<label>Vous recherchez : <br/>
+				<input type="checkbox" name="soulmate" id="soulmate">
+				<label for="soulmate">Ame soeur</label>
 				<br/>
 				<input type="checkbox" name="snight" id="snight">
 				<label for="snight">Série d'un soir</label>
@@ -97,12 +100,14 @@
 				<br/>
 			</label>
 		</p>
-		<select name="age" id="age">
-			<option value="0">18 à 29 ans</option>
-			<option value="1">30 à 39 ans</option>
-			<option value="2">40 à 49 ans</option>
-			<option value="3">50 ans et plus</option>
-		</select>
+		<label>Dans quelle tranche d'age : <br/>
+			<select name="age" id="sage">
+				<option value="0">18 à 29 ans</option>
+				<option value="1">30 à 39 ans</option>
+				<option value="2">40 à 49 ans</option>
+				<option value="3">50 ans et plus</option>
+			</select>
+		</label>
 		<br/>
 		<input type="email" name="mail" id="mail">
 		<label for="mail">Votre email</label>
