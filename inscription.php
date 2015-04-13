@@ -1,10 +1,51 @@
 <?php
+	require 'inc/config.php';
+	//die('ok');
 	require_once 'error.php';
 	if (!empty($_POST)){
 		echo '<pre>';
 		print_r($_POST);
 		echo '</pre>';
 	}
+
+
+	if(!empty($_POST)){
+
+		$prepare = $pdo->prepare('INSERT INTO user (sex, name, first_name, birth_date, city, sman, sfemale, sasoeur, snight, sfriend, age, mail, password) VALUES (:sex, :name, :first_name, :birth_date, :city, :sman, :sfemale, :sasoeur, :snight, :sfriend, :age, :mail, :password)');
+
+		$prepare->bindValue(':sex',$_POST['sex']);
+		$prepare->bindValue(':name',$_POST['name']);
+		$prepare->bindValue(':first_name',$_POST['first_name']);
+		$prepare->bindValue(':birth_date',$_POST['birth_date']);
+		$prepare->bindValue(':city',$_POST['city']);
+		$prepare->bindValue(':sman',$_POST['sman']);
+		$prepare->bindValue(':sfemale',$_POST['sfemale']);
+		$prepare->bindValue(':sasoeur',$_POST['sasoeur']);
+		$prepare->bindValue(':snight',$_POST['snight']);
+		$prepare->bindValue(':sfriend',$_POST['sfriend']);
+		$prepare->bindValue(':age',$_POST['age']);
+		$prepare->bindValue(':mail',$_POST['mail']);
+		$prepare->bindValue(':password',hash('sha256',SALT.$_POST['password'])); // hash le mdp
+
+		if(!empty($_POST['sex'])){
+			$sex = htmlentities($_POST['sex']);
+			$sql = $pdo->prepare('SELECT sex FROM user ');
+			$sql->execute(array('.$sex.' => $_POST['sex']));
+		}
+
+		if(!empty($_POST['name'])){
+			$sex = htmlentities($_POST['name']);
+			$sql = $pdo->prepare('SELECT name FROM user WHERE name = \''.$name.'\';');
+			$sql->execute(array('.$name.' => $_POST['name']));
+		}
+
+
+
+	}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,30 +55,30 @@
 </head>
 <body>
 	<form action="#" method="post">
-		<input type="text" name="nom" id="nom">
-		<label for="nom">Nom</label>
+		<p>
+			<label>Vous êtes : <br/>
+	   	   		<label for="imale">Un homme</label>
+				<input type="radio" name="sex" id="imale" value="imale">
+				<label for="ifemale">Une femme</label>
+				<input type="radio" name="sex" id="ifemale" value="ifemale">
+			</label>
+	    </p>
+		<input type="text" name="name" id="name">
+		<label for="name">Nom</label>
 		<br/>
-		<input type="text" name="prenom">
-		<label for="prenom" id="prenom">Prénom</label>
+		<input type="text" name="first_name" id="first_name">
+		<label for="first_name" id="first_name">Prénom</label>
 		 <p>
-		    <input type="date" name="birth">
-	   		<label for="birth">Date de naissance</label>
+		    <input type="date" name="birth_date">
+	   		<label for="birth_date">Date de naissance</label>
 		</p>
 		<p>
 		<input type="text" name="city" id="city">
 		<label for="city">Ville</label>
 		</p>
-		<p>
-			<label>Vous êtes : <br/>
-	   	   		<label for="imale">Un homme</label>
-				<input type="radio" name="sexe" id="imale" value="imale">
-				<label for="ifemale">Une femme</label>
-				<input type="radio" name="sexe" id="ifemale" value="ifemale">
-			</label>
-	    </p>
 	    <p>
 	    	<label>Vous recherchez :<br/>
-				<input type="checkbox" name="smen" id="smen">
+				<input type="checkbox" name="sman" id="sman">
 				<label for="smen">Un homme</label>
 				<input type="checkbox" name="sfemale" id="sfemale">
 				<label for="sfemale">Une femme</label>
@@ -56,7 +97,7 @@
 				<br/>
 			</label>
 		</p>
-		<select name="age" id="sage">
+		<select name="age" id="age">
 			<option value="0">18 à 29 ans</option>
 			<option value="1">30 à 39 ans</option>
 			<option value="2">40 à 49 ans</option>
@@ -69,10 +110,10 @@
 		<input type="email" name="cmail" id="cmail">
 		<label for="cmail">Confirmez votre email</label>
 		<br/>
-		<input type="password" name="psw" id="psw">
-		<label for="psw">Votre mot de passe</label>
+		<input type="password" name="password" id="password">
+		<label for="password">Votre mot de passe</label>
 		<br/>
-		<input type="password" name="cpsw" id="cpsw">
+		<input type="password" name="cpassword" id="cpassword">
 		<label for="cpsw">Confirmez votre mot de passe</label>
 		<br/>
 		<input type="submit" name="valid">
