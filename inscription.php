@@ -29,10 +29,10 @@
 		</p>
 		<p>
 			<label>Vous êtes : <br/>
-	   	   		<label for="imale">Un homme</label>
 				<input type="radio" name="sexe" id="imale" value="imale">
-				<label for="ifemale">Une femme</label>
+	   	   		<label for="imale">Un homme</label>
 				<input type="radio" name="sexe" id="ifemale" value="ifemale">
+				<label for="ifemale">Une femme</label>
 			</label>
 	    </p>
 	    <p>
