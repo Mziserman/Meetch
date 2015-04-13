@@ -1,4 +1,5 @@
 <?php
+	require_once 'error.php';
 	if (!empty($_POST)){
 		echo '<pre>';
 		print_r($_POST);
@@ -18,6 +19,14 @@
 		<br/>
 		<input type="text" name="prenom">
 		<label for="prenom" id="prenom">Prénom</label>
+		 <p>
+		    <input type="date" name="birth">
+	   		<label for="birth">Date de naissance</label>
+		</p>
+		<p>
+		<input type="text" name="city" id="city">
+		<label for="city">Ville</label>
+		</p>
 		<p>
 			<label>Vous êtes : <br/>
 	   	   		<label for="imale">Un homme</label>
@@ -33,14 +42,6 @@
 				<input type="checkbox" name="sfemale" id="sfemale">
 				<label for="sfemale">Une femme</label>
 			</label>
-		</p>
-	    <p>
-		    <input type="date" name="birth">
-	   		<label for="birth">Date de naissance</label>
-		</p>
-		<p>
-		<input type="text" name="city" id="city">
-		<label for="city">Ville</label>
 		</p>
 	    <p>
    	   		<label>Que recherchez-vous ? <br/>
