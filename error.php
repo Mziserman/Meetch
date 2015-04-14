@@ -50,6 +50,36 @@
 			$errors['city_empty']="Vous n'avez pas rempli votre ville";
 			$invalide['city']=1;
 		}
+		if(empty($_POST['mail'])){
+			$errors['mail_empty']="Vous n'avez pas remplis votre mail";
+			$invalide['mail']=1;
+		} 
+		if(empty($_POST['cmail'])){
+			$errors['cmail_empty']="Vous n'avez pas remplis votre confirmation de mail";
+			$invalide['cmail']=1;
+		}
+		if (!isset($errors['mail_empty']) && !isset($errors['cmail_empty'])){
+			if ($_POST['mail'] != $_POST['cmail']){
+				$errors['mail_cmail_different']="Votre confirmation de mail est différente de votre mail";
+				$invalide['mail']=1;
+				$invalide['cmail']=1;
+			}
+		}
+		if(empty($_POST['password'])){
+			$errors['password_empty']="Vous n'avez pas remplis votre mot de passe";
+			$invalide['password']=1;
+		} 
+		if(empty($_POST['cpassword'])){
+			$errors['cpassword_empty']="Vous n'avez pas remplis votre confirmation de mot de passe";
+			$invalide['cpassword']=1;
+		}
+		if (!isset($errors['password_empty']) && !isset($errors['cpassword_empty'])){
+			if ($_POST['password'] != $_POST['cpassword']){
+				$errors['password_cpassword_different']="Votre confirmation de mot de passe est différente de votre mot de passe";
+				$invalide['password']=1;
+				$invalide['cpassword']=1;
+			}
+		}
 		if (!empty($invalide)){
 			$errors['invalide']=$invalide;
 		}
