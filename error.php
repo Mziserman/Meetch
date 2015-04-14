@@ -42,10 +42,13 @@
 			$errors["sex_empty"]="Vous n'avez pas rentré votre sexe.";
 			$invalide['sex']=1;
 		}
-		
 		if ($_POST['soulmate']=="no" && $_POST['snight'] == "no" && $_POST['sfriend']="no"){
 			$errors["searching_empty"]="Vous n'avez pas rentré ce que vous cherchez";
 			$invalide['searching']=1;
+		}
+		if (empty($_POST['city'])){
+			$errors['city_empty']="Vous n'avez pas rempli votre ville";
+			$invalide['city']=1;
 		}
 		if (!empty($invalide)){
 			$errors['invalide']=$invalide;
