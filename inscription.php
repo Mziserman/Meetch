@@ -42,10 +42,6 @@
 		$prepare->execute();
 
 	}
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

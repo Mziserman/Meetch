@@ -9,7 +9,7 @@ ini_set('display_errors',1);
 define('DB_HOST','localhost');
 define('DB_NAME','meetch');
 define('DB_USER','root');
-define('DB_PASS',''); // '' par défaut sur windows
+define('DB_PASS','root'); // '' par défaut sur windows
 define('SALT','46°G546/£&ETJIsh^s'); // Chaîne de caractères aléatoires
 
 try
