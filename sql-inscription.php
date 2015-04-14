@@ -1,16 +1,5 @@
 <?php
-/* 
 
-CHOSES A MODIFIER : sman -> smale dans la BDD 
-
-
-
-
-
-
-
-
-*/
 	if(!empty($_POST)){
 
 		$prepare = $pdo->prepare('INSERT INTO user (sex, name, first_name, birth_date, city, smale, sfemale, sasoeur, snight, sfriend, age, mail, password) VALUES (:sex, :name, :first_name, :birth_date, :city, :smale, :sfemale, :sasoeur, :snight, :sfriend, :age, :mail, :password)');

@@ -2,7 +2,7 @@
 	require 'inc/config.php';
 	//die('ok');
 	//require_once 'error.php';
-	require_once 'sql.php';
+	require_once 'sql-inscription.php';
 	if (!empty($_POST)){
 		echo '<pre>';
 		print_r($_POST);
@@ -16,7 +16,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Inscription</title>
 </head>
 <body>
 	<form action="#" method="post">
@@ -46,7 +46,7 @@
 		<p>
 			<label>Vous recherchez :<br/>
 				<input type="hidden" name="smale" value="no">
-				<input type="checkbox" name="smale" id="smale" checked>
+				<input type="checkbox" name="smale" id="smale">
 				<label for="smale">Un homme</label>
 				<input type="hidden" name="sfemale" value="no">
 				<input type="checkbox" name="sfemale" id="sfemale">
@@ -56,7 +56,7 @@
 		<p>
 		<label>Vous recherchez : <br/>
 				<input type="hidden" name="soulmate" value="no">
-				<input type="checkbox" name="soulmate" id="soulmate" checked>
+				<input type="checkbox" name="soulmate" id="soulmate">
 				<label for="soulmate">Ame soeur</label>
 				<br/>
 				<input type="hidden" name="snight" value="no">
