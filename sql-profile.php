@@ -17,38 +17,38 @@ if(isset($_SESSION['id_co'])){
 		}
 	}
 
-	if($user_info->sex = 'ifemale'){
+	if($user_info->sex == 'ifemale'){
 		$user_info->sex = 'Femme';
 	}
 	else{
 		$user_info->sex = 'Homme';
 	}
 
-	if($user_info->smale = 'on'){
+	if($user_info->smale == 'on'){
 		$user_info->smale = 'Oui';
 	}
 	else{
 		$user_info->smale = 'Non';
 	}
-	if($user_info->sfemale = 'on'){
-		$user_info->sfemale = 'Oui';
+	if($user_info->sfemale == 'on'){
+		$user_info->sfemale = 'oui';
 	}
 	else{
-		$user_info->sfemale = 'Non';
+		$user_info->sfemale = 'non';
 	}
-	if($user_info->sasoeur = 'on'){
+	if($user_info->sasoeur == 'on'){
 		$user_info->sasoeur = 'Oui';
 	}
 	else{
 		$user_info->sasoeur = 'Non';
 	}
-	if($user_info->snight = 'on'){
+	if($user_info->snight == 'on'){
 		$user_info->snight = 'Oui';
 	}
 	else{
 		$user_info->snight = 'Non';
 	}
-	if($user_info->sfriend = 'on'){
+	if($user_info->sfriend == 'on'){
 		$user_info->sfriend = 'Oui';
 	}
 	else{

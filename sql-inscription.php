@@ -97,5 +97,7 @@
 			}
 
 			$prepare->execute();
+
+			header('Location:login.php');
 		}
 	}

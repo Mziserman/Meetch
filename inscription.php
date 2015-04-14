@@ -4,11 +4,7 @@
 
 	require_once 'error.php';
 	require_once 'sql-inscription.php';
-	if (!empty($_POST)){
-		echo '<pre>';
-		print_r($_POST);
-		echo '</pre>';
-	}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
