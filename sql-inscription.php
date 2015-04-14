@@ -73,10 +73,10 @@
 		}
 
 
-		if(isset($_POST['snight'])){
-			$sfriend = htmlentities($_POST['snight']);
-			$sql = $pdo->prepare('SELECT snight FROM user WHERE snight = \''.$snight.'\';');
-			$sql->execute(array('.$snight.' => $_POST['snight']));
+		if(isset($_POST['sfriend'])){
+			$sfriend = htmlentities($_POST['sfriend']);
+			$sql = $pdo->prepare('SELECT sfriend FROM user WHERE sfriend = \''.$sfriend.'\';');
+			$sql->execute(array('.$sfriend.' => $_POST['sfriend']));
 		}
 
 		if(isset($_POST['age'])){
