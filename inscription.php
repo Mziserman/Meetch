@@ -2,7 +2,7 @@
 	require 'inc/config.php';
 	//die('ok');
 	require_once 'error.php';
-	require_once 'sql.php';
+	require_once 'sql-inscription.php';
 	if (!empty($_POST)){
 		echo '<pre>';
 		print_r($_POST);
