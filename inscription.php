@@ -23,7 +23,7 @@
 		</p>
 	</div>
 
-	<form action="#" method="post" <form method="post" action="page.php" enctype="multipart/form-data">>
+	<form method="post" action="page.php" enctype="multipart/form-data">>
 
 		<p>
 			<label>Vous êtes : <br/>
