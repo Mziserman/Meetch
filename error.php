@@ -1,8 +1,9 @@
 <?php
 	error_reporting(E_ALL); 
 	ini_set("display_errors", 1);
-
+	require_once 'inc/config.php';
 	require_once 'inscription.php';
+	require_once 'sql-inscription.php';
 	function get_errors($data){
 		unset($invalide);
 		unset($errors);
@@ -80,6 +81,19 @@
 				$invalide['cpassword']=1;
 			}
 		}
+		if(!isset($invalide['mail'])){
+			// $mail = htmlentities($_POST['mail']);
+			// $sql = $pdo->prepare('SELECT mail FROM user WHERE mail = \''.$mail.'\';');
+			// $sql->execute(array('.$mail.' => $_POST['mail']));
+
+			// $res = $sql->fetch();
+
+			// if ($res){
+			// 	// S'il y a un résultat, c'est à dire qu'il existe déjà un mail dans la bdd
+			// 	$errors['mail_already_present']="Votre mail est déjà enregistré";
+			// 	$invalide['mail']=1;
+			// }
+		}
 		if (!empty($invalide)){
 			$errors['invalide']=$invalide;
 		}
@@ -88,7 +102,7 @@
 
 	if (!empty($_POST)){
 		$errors = get_errors($_POST);
-		echo '<pre>';
-		print_r($errors);
-		echo '</pre>';
+		// echo '<pre>';
+		// print_r($errors);
+		// echo '</pre>';
 	}
