@@ -1,6 +1,6 @@
 <?php
-	error_reporting(E_ALL); 
-	ini_set("display_errors", 1);
+	// error_reporting(E_ALL); 
+	// ini_set("display_errors", 1);
 	require_once 'inc/config.php';
 	require_once 'inscription.php';
 	require_once 'sql-inscription.php';
@@ -98,11 +98,4 @@
 			$errors['invalide']=$invalide;
 		}
 		return $errors;
-	}
-
-	if (!empty($_POST)){
-		$errors = get_errors($_POST);
-		// echo '<pre>';
-		// print_r($errors);
-		// echo '</pre>';
 	}
