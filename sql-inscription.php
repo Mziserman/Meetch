@@ -1,26 +1,7 @@
 <?php
 	require_once 'error.php';
 	require_once 'inscription.php';
-	if (empty($_POST)){
-		$_POST['sex'] 		='';
-		$_POST['name']		='';
-		$_POST['first_name']='';
-		$_POST['birth_date']='';
-		$_POST['city']		='';
-		$_POST['mail']		='';
-		$_POST['cmail']		='';
-		$_POST['password']	='';
-		$_POST['cpassword']	='';
-		$_POST['smale']		='no';
-		$_POST['sfemale']	='no';
-		$_POST['soulmate']	='no';
-		$_POST['snight']	='no';
-		$_POST['sfriend']	='no';
-		$_POST['sfriend']	='no';
-		$_POST['sfriend']	='no';
-		$_POST['age']		=0;
-	}
-	
+
 	if(!empty($_POST)){
 		$errors = get_errors($_POST);
 		if(empty($errors) || !isset($errors)){
@@ -121,3 +102,12 @@
 			header('Location:login.php');
 		}
 	}
+
+
+	/*$_FILES['user_img']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
+	$_FILES['user_img']['type']     //Le type du fichier. Par exemple, cela peut être « image/png ».
+	$_FILES['user_img']['size']     //La taille du fichier en octets.
+	$_FILES['user_img']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
+	$_FILES['user_img']['error']    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.*/
+
+	//if ($_FILES['icone']['error'] > 0) $erreur = "Erreur lors du transfert";
