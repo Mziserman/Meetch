@@ -1,6 +1,5 @@
 <?php
 
-	session_start();
 
 	if(!empty($_POST)){ // test si des données sont renvoyées
 		echo '<pre>';
@@ -19,8 +18,9 @@
 
 		else{
 			if($user->password == hash('sha256',SALT.$_POST['password'])){ // vérifie le hash du MDP
-				echo 'youhou';
 				$_SESSION['id_co']  = $_POST['mail'];
+				
+				exit;
 			}
 			else{
 				echo 'Mail ou password errone';
