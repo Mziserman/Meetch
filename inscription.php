@@ -103,6 +103,7 @@
 		<input type="password" name="cpassword" id="cpassword">
 		<label for="cpassword">Confirmez votre mot de passe</label>
 		<br/>
+		<input name="userfile" type="file" />
 		<input type="submit" name="valid">
 	</form>
 </body>

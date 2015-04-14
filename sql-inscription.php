@@ -1,6 +1,26 @@
 <?php
 	require_once 'error.php';
 	require_once 'inscription.php';
+	if (empty($_POST)){
+		$_POST['sex'] 		='';
+		$_POST['name']		='';
+		$_POST['first_name']='';
+		$_POST['birth_date']='';
+		$_POST['city']		='';
+		$_POST['mail']		='';
+		$_POST['cmail']		='';
+		$_POST['password']	='';
+		$_POST['cpassword']	='';
+		$_POST['smale']		='no';
+		$_POST['sfemale']	='no';
+		$_POST['soulmate']	='no';
+		$_POST['snight']	='no';
+		$_POST['sfriend']	='no';
+		$_POST['sfriend']	='no';
+		$_POST['sfriend']	='no';
+		$_POST['age']		=0;
+	}
+	
 	if(!empty($_POST)){
 		$errors = get_errors($_POST);
 		if(empty($errors) || !isset($errors)){
