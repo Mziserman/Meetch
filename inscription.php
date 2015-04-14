@@ -13,7 +13,23 @@
 	<title>Inscription</title>
 </head>
 <body>
-	<form action="#" method="post" <form method="post" action="page.php" enctype="multipart/form-data">
+
+	<?php if (!empty($errors)) { ?>
+		<div class="errors">
+			<?php foreach($errors as $_error){ ?>
+			<p>
+				<?php 
+					if(!is_array($_error)){
+						echo $_error; 
+					}
+					?>
+			<p>
+			<?php } ?>
+		</div>
+	<?php } ?>
+
+	<form method="post" action="page.php" enctype="multipart/form-data">	
+
 		<p>
 			<label>Vous êtes : <br/>
 				<label for="imale">Un homme</label>
@@ -85,9 +101,7 @@
 		<input type="password" name="cpassword" id="cpassword">
 		<label for="cpassword">Confirmez votre mot de passe</label>
 		<br/>
-		<input type="hidden" name="max_file_size" value="400000" />
-		<input name="user_img" type="file" />
-		<br/>
+		
 		<input type="submit" name="valid">
 	</form>
 </body>
