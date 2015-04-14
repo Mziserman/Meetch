@@ -31,6 +31,14 @@
 	<title>Inscription</title>
 </head>
 <body>
+	<div class="errors">
+		<p>
+		<?php foreach ($errors as $_error) { 
+			if (!is_array($_error))
+				echo $_error."<br/>";
+		} ?>
+		</p>
+	</div>
 	<form action="#" method="post">
 		<p>
 			<label>Vous êtes : <br/>
