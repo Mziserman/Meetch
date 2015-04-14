@@ -1,16 +1,14 @@
 <?php
 	require 'inc/config.php';
 	//die('ok');
-	//require_once 'error.php';
+
+	require_once 'error.php';
 	require_once 'sql-inscription.php';
 	if (!empty($_POST)){
 		echo '<pre>';
 		print_r($_POST);
 		echo '</pre>';
 	}
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,15 +30,15 @@
 		<label for="name">Nom</label>
 		<br/>
 		<input type="text" name="first_name" id="first_name">
-		<label for="first_name" id="first_name">Prénom</label>
+		<label for="first_name">Prénom</label>
 		<br/>
 		<p>
-		<input type="date" name="birth_date">
-		<label for="birth_date">Date de naissance</label>
+			<input type="date" name="birth_date" id="birth_date">
+			<label for="birth_date">Date de naissance</label>
 		</p>
 		<p>
-		<input type="text" name="city" id="city">
-		<label for="city">Ville</label>
+			<input type="text" name="city" id="city">
+			<label for="city">Ville</label>
 		</p>
 
 		<p>
@@ -54,19 +52,19 @@
 			</label>
 		</p>
 		<p>
-		<label>Vous recherchez : <br/>
-				<input type="hidden" name="soulmate" value="no">
-				<input type="checkbox" name="soulmate" id="soulmate">
-				<label for="soulmate">Ame soeur</label>
-				<br/>
-				<input type="hidden" name="snight" value="no">
-				<input type="checkbox" name="snight" id="snight">
-				<label for="snight">Série d'un soir</label>
-				<br/>
-				<input type="hidden" name="sfriend" value="no">
-				<input type="checkbox" name="sfriend" id="sfriend">
-				<label for="sfriend">Amitié</label>
-				<br/>
+			<label>Vous recherchez : <br/>
+					<input type="hidden" name="soulmate" value="no">
+					<input type="checkbox" name="soulmate" id="soulmate" >
+					<label for="soulmate">Ame soeur</label>
+					<br/>
+					<input type="hidden" name="snight" value="no">
+					<input type="checkbox" name="snight" id="snight">
+					<label for="snight">Série d'un soir</label>
+					<br/>
+					<input type="hidden" name="sfriend" value="no">
+					<input type="checkbox" name="sfriend" id="sfriend">
+					<label for="sfriend">Amitié</label>
+					<br/>
 			</label>
 		</p>
 		<label>Dans quelle tranche d'age : <br/>
@@ -77,6 +75,7 @@
 				<option value="3">50 ans et plus</option>
 			</select>
 		</label>
+		<br/>
 		<br/>
 		<input type="email" name="mail" id="mail">
 		<label for="mail">Votre email</label>
